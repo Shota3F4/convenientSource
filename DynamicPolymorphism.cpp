@@ -1,27 +1,6 @@
-#include<stdio.h>
-class BasicClass
-{
-public:
-	
-	BasicClass(int num);
-	virtual void Print();
-	
-	
-private:
-	int MyNumber;
-}
-
-BasicClass::BasicClass(int num)
-: MyNumber(num)
-{
-	printf("ベーシックコンストラクタ");
-}
-BasicClass::Print(){
-	printf("基底クラスです%d\n",MyNumber);
-}
-
-class InheritClass : public BasicClass#include<iostream>
+#include<iostream>
 #include<list>
+
 using namespace std;
 
 
@@ -96,37 +75,3 @@ int main(){
 	}
 	return 0;
 }
-{
-public:
-	InheritClass(int num);
- 	void Print();
-private:
-}
-
-InheritClass::InheritClass(int num)
-:BasicClass(num)
-{
-	printf("継承コンストラクタ");
-}
-
-InheritClass::Print(){
-	printf("継承クラスです%d\n",MyNumber);
-}
-
-
-int main()
-{
-	BasicClass one(1);
-	BasicClass two(2);
-	InheritClass three(11);
-	BasicClass four(3);
-	InheritClass five(12);
-	BasicClass Array[10] = {one, two, three, four, five};
-
-	for(int i=0;i<5;i++){
-		Array[i].Print();
-	} 
-	return 0;
-}
-
-
